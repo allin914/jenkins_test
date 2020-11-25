@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+    
+    environment {
+        PROJECT = "TEST"
+        OWNER = "Roman"
+    }
+
+    stages {
+        stage('1-Build') {
+            steps {
+                echo 'Start Build'
+                echo 'Building....'
+                echo 'Helo ${OWNER}'
+                echo 'Stop Build'
+            }
+        }
+        stage('2-Test') {
+            steps {
+                echo 'Start Test'
+                echo 'Testing....'
+                echo 'Project: ${PROJECT}'
+                echo 'Stop Test'
+            }
+        }
+        stage('3-Test') {
+            steps {
+                echo 'Start Deploy'
+                echo 'Deploing....'
+                echo 'Stop Deploy'
+            }
+        }
+    }
+}
